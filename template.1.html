@@ -5,13 +5,41 @@
     <title>jQeury Template</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>     
     <script>$(function(){
+      
+      $('button').click(function(){
+        var name = $('#name').val();
+        var city = $('input[name="city"]:checked').val();
+        var date = $('#date').val();
+        var story = name + " is going to " + city + " on " + date;
+        $('h1').html(story);
+        $('h1').click(function(){
+          
+        });
+      });
     });
+    
     </script>
+    <style>
+      #banner {
+        background-color: green ;
+        
+        
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
-    Your Name: <input type="text" name="name"><br>
-    Your Final Destination: <input type="text" name="fDestination"><br>
-    Date of Travel: <input type="text" name="DOP">
-  
+    Your Name:<br> <input id = "name" type="text" name="name"><br>
+    Your Final Destination:<br> 
+  <input  type="radio" name="city" value="Dubai"> DUBAI<br>
+  <input  type="radio" name="city" value="Paris"> PARIS<br>
+  <input  type="radio" name="city" value="Vatican City"> VATICAN CITY<br>  <br>
+    Date of Travel:<br> <input id = "date" type="date" name="date"><br>
+    <button>SUBMIT</button>
+    <div id = 'banner'>
+    <h1></h1>
+    </div>
   </body>
 </html>

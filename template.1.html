@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>jQeury Template</title>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>     
-    <script>$(function(){
-      
-      $('button').click(function(){
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQeury Template</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function() {
+
+      $('button').click(function() {
+        var color = $('#color').val();
         var name = $('#name').val();
         var city = $('input[name="city"]:checked').val();
         var date = $('#date').val();
         var story = name + " is going to " + city + " on " + date;
         $('h1').html(story);
-        $('h1').click(function(){
-          
-        });
+        $('#slogan').css('color', color);
       });
     });
+  </script>
+  <style>
+    #banner {
+      background-color: green;
+      border: blue;
+    }
     
-    </script>
-    <style>
-      #banner {
-        background-color: green ;
-        
-        
-      }
-      
-      
-      
-    </style>
-  </head>
-  <body>
+    h2 {
+      color: red;
+    }
+    
+    #html {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='html'>
+    <center>
+      <h2>
     Your Name:<br> <input id = "name" type="text" name="name"><br>
     Your Final Destination:<br> 
   <input  type="radio" name="city" value="Dubai"> DUBAI<br>
   <input  type="radio" name="city" value="Paris"> PARIS<br>
   <input  type="radio" name="city" value="Vatican City"> VATICAN CITY<br>  <br>
-    Date of Travel:<br> <input id = "date" type="date" name="date"><br>
+    Day You Want to Travel:<br> <input id = "date" type="date" name="date"><br>
+   Favorite Color:<br> <input id = 'color' type="text" name='color'><br>
     <button>SUBMIT</button>
-    <div id = 'banner'>
-    <h1></h1>
-    </div>
-  </body>
+    </h2>
+    </center>
+  </div>
+  <div id='banner'>
+    <h1 id = 'slogan'></h1>
+  </div>
+</body>
+
 </html>
